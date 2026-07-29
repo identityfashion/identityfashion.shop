@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I.Fashion | Premium T-Shirts</title>
+  <meta name="description" content="Modern t-shirt store with bold styles, featured drops, and a fast cart experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand" aria-label="I.Fashion home">
+        <img src="assets/logo.png" alt="I.Fashion logo" class="brand-logo" />
+        <span class="brand-text">I<span>.Fashion</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#shop">Shop</a>
+        <a href="#customize">Customize</a>
+        <a href="#featured">Featured</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="cart-button" id="cartToggle" aria-label="Open cart">
+        Cart
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">New Drop · Summer 2026</p>
+          <h1>Premium t-shirts built for everyday confidence.</h1>
+          <p class="hero-text">Launch your clothing brand with a storefront that feels bold, modern, and ready to sell from day one.</p>
+          <div class="hero-actions">
+            <a href="#shop" class="btn btn-primary">Shop T-Shirts</a>
+            <a href="#featured" class="btn btn-secondary">See Featured Styles</a>
+          </div>
+          <ul class="hero-stats">
+            <li><strong>1,200+</strong><span>Happy customers</span></li>
+            <li><strong>48h</strong><span>Fast dispatch</span></li>
+            <li><strong>100%</strong><span>Premium cotton</span></li>
+          </ul>
+        </div>
+        <div class="hero-card">
+          <div class="hero-badge">Best Seller</div>
+          <h2>Urban Essential Tee</h2>
+          <p>Minimal fit, heavyweight fabric, and clean streetwear styling.</p>
+          <div class="hero-price-row">
+            <span class="price">&#8377;1,299</span>
+            <span class="rating" aria-label="Rated 4.9 out of 5">
+              <span class="stars" aria-hidden="true"></span>
+              <span>4.9</span>
+            </span>
+          </div>
+          <button class="btn btn-primary add-featured" data-product-id="tee-001">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container feature-grid">
+        <article>
+          <h3>Premium Fabric</h3>
+          <p>Soft, breathable cotton with a durable finish that holds shape.</p>
+        </article>
+        <article>
+          <h3>Fast Checkout</h3>
+          <p>A clean buying flow that makes it easy for customers to order quickly.</p>
+        </article>
+        <article>
+          <h3>Brand Ready</h3>
+          <p>Modern visuals and structured sections tailored for a t-shirt business.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="container section-heading">
+        <div>
+          <p class="eyebrow">Shop Collection</p>
+          <h2>Best-selling t-shirts</h2>
+        </div>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="oversized">Oversized</button>
+          <button class="filter-btn" data-filter="graphic">Graphic</button>
+          <button class="filter-btn" data-filter="minimal">Minimal</button>
+        </div>
+      </div>
+      <div class="container products-grid" id="productsGrid"></div>
+      <div class="container pagination" id="pagination"></div>
+    </section>
+
+    <section class="custom-section" id="customize">
+      <div class="container custom-grid">
+        <div>
+          <p class="eyebrow">Custom T-Shirt Printing</p>
+          <h2>Upload your design and we print it on your T-shirt.</h2>
+          <p>Customers can send artwork, logos, or graphics for custom printing. This is ideal for brand merch, events, teams, and one-off personalized tees.</p>
+          <ul class="custom-points">
+            <li>Upload your design image</li>
+            <li>Choose print placement and quantity</li>
+            <li>We review and contact you for confirmation</li>
+          </ul>
+          <p><strong>Custom order phone:</strong> <a href="tel:9363048515">9363048515</a></p>
+        </div>
+        <form class="custom-form" id="customForm">
+          <label class="custom-upload" for="designUpload">
+            <span>Choose design image</span>
+            <input type="file" id="designUpload" accept="image/*" />
+          </label>
+          <div class="design-preview" id="designPreview">
+            <p>No design uploaded yet</p>
+          </div>
+          <div class="custom-fields">
+            <input type="text" id="customerName" placeholder="Your name" required />
+            <input type="number" id="customQuantity" placeholder="Quantity" min="1" required />
+          </div>
+          <select id="printPlacement" required>
+            <option value="">Select print placement</option>
+            <option value="Front Print">Front Print</option>
+            <option value="Back Print">Back Print</option>
+            <option value="Front and Back">Front and Back</option>
+          </select>
+          <textarea id="designNotes" placeholder="Describe your custom design request"></textarea>
+          <button type="submit" class="btn btn-primary">Request Custom Print</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="featured-section" id="featured">
+      <div class="container featured-grid">
+        <div>
+          <p class="eyebrow">Why customers choose us</p>
+          <h2>Designed to convert casual visitors into repeat buyers.</h2>
+          <p>Showcase featured drops, promote your brand story, and build trust with strong social proof and clean shopping flows.</p>
+        </div>
+        <div class="testimonial-card">
+          <p>"The quality feels premium and the fit is perfect. Shipping was quick too."</p>
+          <strong>— Aarav, verified buyer</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">About I.Fashion</p>
+          <h2>Built for bold basics and standout essentials.</h2>
+        </div>
+        <p>We craft modern t-shirts with a focus on quality, fit, and everyday wearability. This storefront gives your business a polished launchpad with products, cart functionality, and clear calls to action.</p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-panel">
+        <div>
+          <p class="eyebrow">Stay in touch</p>
+          <h2>Get updates on new drops</h2>
+          <p>Collect emails and keep customers engaged with upcoming launches and offers.</p>
+          <p><strong>Call us:</strong> <a href="tel:9363048515">9363048515</a></p>
+        </div>
+        <form class="contact-form" id="newsletterForm">
+          <input type="email" id="emailInput" placeholder="Enter your email" required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="closeCart" class="close-cart" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <strong id="cartTotal">&#8377;0</strong>
+      </div>
+      <button class="btn btn-primary checkout-btn">Checkout</button>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <template id="productCardTemplate">
+    <article class="product-card">
+      <div class="product-gallery">
+        <img class="product-image" alt="" />
+        <div class="product-thumbnails"></div>
+      </div>
+      <div class="product-content">
+        <div class="product-meta">
+          <span class="product-category"></span>
+          <span class="product-rating"></span>
+        </div>
+        <h3 class="product-name"></h3>
+        <p class="product-description"></p>
+        <label class="size-selector">
+          <span>Size</span>
+          <select class="product-size" aria-label="Choose size">
+            <option value="S">S</option>
+            <option value="M" selected>M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+            <option value="XXXL">XXXL</option>
+          </select>
+        </label>
+        <div class="product-bottom">
+          <strong class="product-price"></strong>
+          <button class="btn btn-secondary add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
